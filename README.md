@@ -1,51 +1,65 @@
-# LLM embeddings in psychology: a 90-minute Jupyter Book tutorial
+# LLM embeddings in psychology
 
-A three-chapter Jupyter Book cut from the [LLM4BeSci course](https://github.com/dwulff/LLM4BeSci_2025MetaRep). Each chapter is a theory section with figures followed by an exercise that runs on the free Google Colab CPU runtime. No Hugging Face account, API key, GPU or Google Drive mount is needed.
+Material for a 90-minute hands-on seminar on using language-model embeddings in psychological research.
 
-This folder is designed to become the root of its own public GitHub repository. It carries its own `.github/workflows/book.yml` that builds and publishes the book to GitHub Pages.
+**Read the tutorial here: https://leonardozaggia.github.io/PONS_material/**
 
-## Contents
+## What you need
 
-| File | What it is |
-|---|---|
-| `intro.md`, `setup.md`, `references.md` | Landing page, Colab instructions, reading list and license |
-| `01_vectors.ipynb` | Chapter 1: from words to vectors. Theory 15 min, exercise 10 min |
-| `02_personality.ipynb` | Chapter 2: sentence embeddings and personality items. Theory 10 min, exercise 30 min |
-| `03_features.ipynb` | Chapter 3: embeddings as features for prediction, plus the outlook. Theory 5 min, exercise 10 min, outlook 5 min |
-| `images/` | Slide pages from the course decks, rasterised at 1920 px (CC BY-SA 4.0) |
-| `_config.yml`, `_toc.yml`, `requirements.txt` | Jupyter Book 1.x configuration |
-| `slide_picks.md` | Which course slides to use in the live talk and a run-of-show |
+- A Google account, to run the exercises on [Google Colab](https://colab.research.google.com) for free. Nothing is installed on your computer.
+- No Python experience. Every cell is explained, and the tasks ask you to change a value or a line of text, not to write code from scratch.
+- Some familiarity with questionnaires and correlation.
 
-The chapter notebooks are committed **with their outputs**, and the book build does not re-execute them (`execute_notebooks: "off"`). That keeps the Pages build fast and free of torch. If you change a code cell, rerun the notebook before committing.
+## How the session works
 
-## Publishing
+Each chapter starts with a short theory section and ends with an exercise you run yourself.
 
-1. Create a new public repository on GitHub and copy the contents of this folder to its root.
-2. `_config.yml` points at `leonardozaggia/PONS_material`; the Colab rocket button on every chapter is built from that URL, so change it if the repository moves.
-3. In the repository settings, under Pages, set the source to **GitHub Actions**.
-4. Push to `main`. The workflow builds the book and publishes it at `https://<owner>.github.io/<repo>/`.
+| Chapter | Topic | What you do |
+|---|---|---|
+| 1. From words to vectors | Why a word is defined by its context, and how a model turns text into numbers | Turn three sentences into vectors and compare them |
+| 2. Sentence embeddings and personality items | How a transformer builds a sentence embedding | Embed 300 personality items, compare their similarity with real correlations, map and classify them |
+| 3. Embeddings as features | Using embeddings as input to a classical model | Train a classifier on tweets and evaluate it properly |
 
-To build locally instead:
+To run an exercise, open the chapter in the tutorial, click the rocket icon at the top of the page and choose **Colab**. Run the cells from top to bottom. The first cell installs what is needed and takes about a minute. The [Setup](https://leonardozaggia.github.io/PONS_material/setup.html) page walks through this step by step and lists common problems.
 
-```bash
-pip install -r requirements.txt
-jupyter-book build .
-```
+If you prefer to open the notebooks directly:
 
-and open `_build/html/index.html`.
+- [Chapter 1](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/01_vectors.ipynb)
+- [Chapter 2](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/02_personality.ipynb)
+- [Chapter 3](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/03_features.ipynb)
 
-## Re-executing the chapters
+The figures in the theory sections only show in the tutorial, not in the Colab copy.
+
+## After the seminar
+
+The notebooks keep working after the session, so you can rerun them with your own items or texts. The [References](https://leonardozaggia.github.io/PONS_material/references.html) page lists the papers behind the exercises, the tools, and where to find other embedding models.
+
+## License
+
+CC BY-SA 4.0. The exercises and figures are adapted from the [LLM4BeSci course](https://github.com/dwulff/LLM4BeSci_2025MetaRep) by Zak Hussain, Taisiia Tikhomirova, Valentin Kriegmair and Dirk Wulff. See the References page for details and the list of changes.
+
+---
+
+<details>
+<summary>Notes for maintaining this repository</summary>
+
+This repository is a [Jupyter Book](https://jupyterbook.org) (1.x). Pushing to `main` runs `.github/workflows/book.yml`, which builds the book and publishes it to GitHub Pages. Pages must be set to the **GitHub Actions** source in the repository settings.
+
+The chapter notebooks are committed with their outputs and are not re-executed at build time (`execute_notebooks: "off"`), so the build needs neither torch nor a model download. If you change a code cell, rerun the notebook before committing:
 
 ```bash
 pip install sentence-transformers pacmap
 jupyter nbconvert --to notebook --execute --inplace 0*.ipynb
 ```
 
-The first run downloads the embedding model (about 90 MB). Chapter 2, Task 3 asks participants to switch to `dwulff/mpnet-personality` (about 420 MB).
+To build locally:
 
-## Expected results
+```bash
+pip install -r requirements.txt
+jupyter-book build .
+```
 
-Measured locally on 2 Nov 2026 with a CPU; a Colab CPU runtime is comparable.
+Expected results, measured on a CPU on 2 Nov 2026:
 
 | Result | `all-MiniLM-L6-v2` | `dwulff/mpnet-personality` |
 |---|---|---|
@@ -54,21 +68,6 @@ Measured locally on 2 Nov 2026 with a CPU; a Colab CPU runtime is comparable.
 | Item to facet assignment accuracy (chance .03) | .23 | .45 |
 | Tweet bias test accuracy (chance .50) | .76 | .77 |
 
-The jump to .95 is the fine-tuning punchline, and the moment to raise the caveat that the model was tuned on these very items. The tweet classifier barely moves: a model specialised on personality items does not help on political text.
+`slide_picks.md` lists which course slides to use in the live talk and a run-of-show. The Colab links are built from the repository URL in `_config.yml`; change it there if the repository moves.
 
-## Known limitations
-
-- Figures in the theory sections use relative paths, so they render in the book but not in the Colab copy. The Colab copy is for running the exercise; the theory is read in the book.
-- The book has been built locally but not yet published, and the chapters have not been opened on Colab itself. Do a dry run on Colab before the session.
-
-## Changes relative to the course notebooks
-
-- Data loads from raw GitHub URLs instead of a mounted Google Drive.
-- The warm-up shows the cosine similarity matrix, not only the raw vectors.
-- Chapter 3 fixes a bug in `day_2/day_2_classification_b.ipynb`, where the ridge classifier was fitted on unscaled training features but scored on scaled test features.
-- The model name is a single variable so the fine-tuned-model comparison is a one-line change.
-- Text generation, zero-shot classification with Llama, LoRA fine-tuning and information extraction are left out: they need a GPU and a gated model license, and they are not about embeddings.
-
-## License
-
-CC BY-SA 4.0, inheriting from the LLM4BeSci course by Zak Hussain, Taisiia Tikhomirova, Valentin Kriegmair and Dirk Wulff. See `references.md` for attribution details.
+</details>
