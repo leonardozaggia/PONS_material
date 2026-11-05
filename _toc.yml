@@ -1,0 +1,8 @@
+format: jb-book
+root: intro
+chapters:
+- file: setup
+- file: 01_vectors
+- file: 02_personality
+- file: 03_features
+- file: references
