@@ -16,9 +16,9 @@ Each chapter starts with a short theory section and ends with an exercise you ru
 
 | Chapter | Topic | What you do |
 |---|---|---|
-| 1. From words to vectors | Why a word is defined by its context, and how a model turns text into numbers | Turn three sentences into vectors and compare them |
-| 2. Sentence embeddings and personality items | How a transformer builds a sentence embedding | Embed 300 personality items, compare their similarity with real correlations, map and classify them |
-| 3. Embeddings as features | Using embeddings as input to a classical model | Train a classifier on tweets and evaluate it properly |
+| 1. From words to vectors | Why a word is defined by its context, and how a model turns text into numbers | Guess which sentences are similar, then check; shuffle word order; test negation |
+| 2. Sentence embeddings and personality items | How a transformer builds a sentence embedding | Embed 300 personality items, test their similarity against real correlations with a permutation test, map them, write your own item, switch to a fine-tuned model |
+| 3. Embeddings as features | Using embeddings as input to a classical model | Train a classifier on tweets, compete against it, and evaluate it with permutation and bootstrap |
 
 To run an exercise, open the chapter in the tutorial, click the rocket icon at the top of the page and choose **Colab**. Run the cells from top to bottom. The first cell installs what is needed and takes about a minute. The [Setup](https://leonardozaggia.github.io/PONS_material/setup.html) page walks through this step by step and lists common problems.
 

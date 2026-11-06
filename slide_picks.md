@@ -9,15 +9,15 @@ The book's chapters carry the same figures in their theory sections, so you can 
 | Time | Block | Source | Participant does |
 |---|---|---|---|
 | 0:00 - 0:05 | Why embeddings, two uses of an LLM | `day_1/day_1a.pdf` p30, p33, p37 | Opens Chapter 1 in Colab, runs the Setup cell |
-| 0:05 - 0:20 | What an embedding is | Chapter 1 theory, or `day_2/day_2_embeddings.pdf` picks below | Listens |
-| 0:20 - 0:30 | Warm-up: sentences to vectors | Chapter 1 exercise | Runs cells, Tasks 1-2 |
+| 0:05 - 0:15 | What an embedding is | Chapter 1 theory, or `day_2/day_2_embeddings.pdf` picks below | Listens |
+| 0:15 - 0:30 | Warm-up: sentences to vectors | Chapter 1 exercise | Guesses the ranking first, runs the cells, Tasks 1 and 4, the word-shuffle cell, Task 5 (negation) |
 | 0:30 - 0:40 | How a transformer produces a sentence embedding | Chapter 2 theory, or `day_2/day_2_embeddings.pdf` p28, p29, p31, p40, p45, p46 | Listens |
-| 0:40 - 1:10 | Personality items | Chapter 2 exercise | Runs 2.1 to 2.5, Task 3 rerun with the fine-tuned model |
+| 0:40 - 1:10 | Personality items | Chapter 2 exercise | Runs 2.1 to 2.6: anchor item, permutation test, keying pairs, map, own item (Task 4), then Task 5 rerun with the fine-tuned model |
 | 1:10 - 1:15 | Three ways to use an LLM for prediction | Chapter 3 theory, or `day_2/day_2_classification.pdf` p4, p5, p29 | Listens |
-| 1:15 - 1:25 | Embeddings as features | Chapter 3 exercise | Runs cells, Task 1 if time |
+| 1:15 - 1:25 | Embeddings as features | Chapter 3 exercise | Runs 3.1 to 3.4: fit, you versus the model, permutation and bootstrap |
 | 1:25 - 1:30 | Applications in the field, wrap-up | Chapter 3 outlook, or `day_3/day_3b.pdf` picks below | Questions |
 
-If you run short, drop the Chapter 3 exercise and just show its final confusion matrix. If you run long, Chapter 2 Tasks 1 and 2 are the safest things to skip.
+If you run short, drop Chapter 3's permutation cell and the you-versus-the-model round and just show the confusion matrix. If you run long, Chapter 1 Task 4 and Chapter 2 Tasks 2 and 3 are the safest things to skip. Everything marked Optional in the notebooks is take-home material by design.
 
 ## Picks from `day_1/day_1a.pdf` (Intro to LLMs, 37 pages)
 
