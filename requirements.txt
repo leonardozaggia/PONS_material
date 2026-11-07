@@ -4,3 +4,4 @@ jupyter-book>=1.0,<2
 # Running the chapters yourself, locally or on Colab. Colab already has everything except these two.
 # sentence-transformers
 # pacmap
+nbconvert>=7

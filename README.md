@@ -56,7 +56,7 @@ To build locally:
 
 ```bash
 pip install -r requirements.txt
-jupyter nbconvert --to html solutions/*.ipynb --output-dir _solutions_html/solutions
+python -m nbconvert --to html solutions/*.ipynb --output-dir _solutions_html/solutions
 jupyter-book build .
 ```
 

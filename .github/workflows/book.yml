@@ -27,7 +27,7 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: Export solutions to static pages
-        run: jupyter nbconvert --to html solutions/*.ipynb --output-dir _solutions_html/solutions
+        run: python -m nbconvert --to html solutions/*.ipynb --output-dir _solutions_html/solutions
       - run: jupyter-book build . --warningiserror
       - uses: actions/upload-pages-artifact@v3
         with:
