@@ -1,22 +1,16 @@
-# Jupyter Book 1.x table of contents
+# Jupyter Book 1.x table of contents. Each part is a theory page with its exercise nested
+# underneath, so the sidebar shows one expandable entry per part.
 format: jb-book
 root: intro
-parts:
-  - caption: Before you start
-    chapters:
-      - file: setup
-  - caption: "1. From words to vectors"
-    chapters:
-      - file: 01_vectors
+chapters:
+  - file: setup
+  - file: 01_vectors
+    sections:
       - file: exercises/01_warmup
-  - caption: "2. Items as text"
-    chapters:
-      - file: 02_personality
+  - file: 02_personality
+    sections:
       - file: exercises/02_items
-  - caption: "3. Beyond similarity (take-home)"
-    chapters:
-      - file: 03_features
+  - file: 03_features
+    sections:
       - file: exercises/03_features
-  - caption: Appendix
-    chapters:
-      - file: references
+  - file: references
