@@ -21,6 +21,14 @@
 - [`all-mpnet-base-v2`](https://huggingface.co/sentence-transformers/all-mpnet-base-v2): 110M parameters, 768 dimensions. A common general-purpose default.
 - [`dwulff/mpnet-personality`](https://huggingface.co/dwulff/mpnet-personality): MPNet fine-tuned on pairs of personality items to predict their empirical correlation.
 
+## Solutions
+
+The exercise notebooks with all cells run, for checking your results after the session. These pages are not listed in the sidebar.
+
+- [Exercise 1: from sentences to vectors](https://leonardozaggia.github.io/PONS_material/solutions/01_warmup.html)
+- [Exercise 2: items as text](https://leonardozaggia.github.io/PONS_material/solutions/02_items.html)
+- [Exercise 3: embeddings as features](https://leonardozaggia.github.io/PONS_material/solutions/03_features.html)
+
 ## License and attribution
 
 This book is released under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license.

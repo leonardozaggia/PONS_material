@@ -28,7 +28,7 @@ If you prefer to open the notebooks directly:
 - [Exercise 2: items as text](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/exercises/02_items.ipynb)
 - [Exercise 3: embeddings as features](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/exercises/03_features.ipynb)
 
-The `solutions/` folder holds the same notebooks with their outputs, for checking your results afterwards.
+The `solutions/` folder holds the same notebooks with their outputs. They are published as unlisted pages linked from the book's References page.
 
 ## After the seminar
 
@@ -45,7 +45,7 @@ CC BY-SA 4.0. The exercises and figures are adapted from the [LLM4BeSci course](
 
 This repository is a [Jupyter Book](https://jupyterbook.org) (1.x). Pushing to `main` runs `.github/workflows/book.yml`, which builds the book and publishes it to GitHub Pages. Pages must be set to the **GitHub Actions** source in the repository settings.
 
-The theory lives in `01_vectors.md`, `02_personality.md` and `03_features.md`. The exercise notebooks in `exercises/` are committed **without outputs** and are not executed at build time (`execute_notebooks: "off"`), so the book build needs neither torch nor a model download. The executed copies in `solutions/` are not part of the book; regenerate them after changing an exercise:
+The theory lives in `01_vectors.md`, `02_personality.md` and `03_features.md`. The exercise notebooks in `exercises/` are committed **without outputs** and are not executed at build time (`execute_notebooks: "off"`), so the book build needs neither torch nor a model download. The executed copies in `solutions/` are exported to static HTML by the workflow and copied into the site under `solutions/`, linked only from the References page. Regenerate them after changing an exercise:
 
 ```bash
 pip install sentence-transformers pacmap
@@ -56,6 +56,7 @@ To build locally:
 
 ```bash
 pip install -r requirements.txt
+jupyter nbconvert --to html solutions/*.ipynb --output-dir _solutions_html/solutions
 jupyter-book build .
 ```
 

@@ -34,3 +34,5 @@ sphinx:
     myst_heading_anchors: 3
     # Hide progress-bar chatter (stderr) from the rendered pages; it stays in the notebook for Colab users.
     nb_output_stderr: remove
+    # Solutions are exported to static HTML before the build and copied into the site unlisted (see README)
+    html_extra_path: ["_solutions_html"]
