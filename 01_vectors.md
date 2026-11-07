@@ -1,7 +1,5 @@
 # 1. From words to vectors
 
-**Theory 10 min, exercise 15 min.**
-
 A language model can do two very different things with a piece of text. It can *continue* it, which is what chatbots do, or it can *describe* it as a list of numbers. This tutorial is entirely about the second use. By the end of this chapter you will know what those numbers are, where they come from, and how to compare them.
 
 ## Two things a language model can give you

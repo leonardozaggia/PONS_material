@@ -1,7 +1,5 @@
 # 2. Sentence embeddings and psychological items
 
-**Theory 10 min, exercise 35 min.**
-
 Chapter 1 embedded single words with a shallow network. Real texts are sentences, and the model that embeds them is a **transformer**. This chapter explains just enough of the transformer to understand what a *sentence* embedding is, then puts it to work on something psychologists care about: whether a model's notion of similarity matches what people do when they answer a personality questionnaire.
 
 ## From words to sentences: the transformer

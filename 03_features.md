@@ -1,7 +1,5 @@
 # 3. Beyond similarity: embeddings as features
 
-**Take-home material. Read the theory in 5 minutes; the exercise takes 15.**
-
 So far we compared embeddings with each other. The most common use in applied research is different: embed your texts, then feed the vectors into an ordinary statistical model as predictors. The language model never sees your labels. It only provides a rich numerical description of each text, and the statistics you already know do the rest.
 
 ## Three ways to get a prediction out of a language model
