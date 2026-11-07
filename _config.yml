@@ -2,6 +2,7 @@
 title: LLM Embeddings in Psychology
 author: Leonardo Zaggia
 copyright: "2026"
+logo: images/logo.png
 only_build_toc_files: true
 
 # Notebooks are committed with their outputs and are NOT re-executed at build time,
@@ -21,6 +22,7 @@ launch_buttons:
   colab_url: "https://colab.research.google.com"
 
 html:
+  favicon: images/favicon.png
   use_repository_button: true
   use_issues_button: false
   use_edit_page_button: false
