@@ -1,8 +1,22 @@
+# Jupyter Book 1.x table of contents
 format: jb-book
 root: intro
-chapters:
-- file: setup
-- file: 01_vectors
-- file: 02_personality
-- file: 03_features
-- file: references
+parts:
+  - caption: Before you start
+    chapters:
+      - file: setup
+  - caption: "1. From words to vectors"
+    chapters:
+      - file: 01_vectors
+      - file: exercises/01_warmup
+  - caption: "2. Items as text"
+    chapters:
+      - file: 02_personality
+      - file: exercises/02_items
+  - caption: "3. Beyond similarity (take-home)"
+    chapters:
+      - file: 03_features
+      - file: exercises/03_features
+  - caption: Appendix
+    chapters:
+      - file: references

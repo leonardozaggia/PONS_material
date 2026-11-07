@@ -2,13 +2,13 @@
 
 You need a Google account and a browser. Nothing is installed on your computer.
 
-## Opening a chapter in Colab
+## Opening an exercise in Colab
 
-1. Go to the chapter you want to run (for example [Chapter 1](01_vectors)).
+1. Go to the exercise page you want to run (for example [Exercise 1](exercises/01_warmup)). The theory pages have no rocket; the exercise pages do.
 2. Hover over the rocket icon at the top of the page and click **Colab**.
 3. Colab opens the notebook in *playground mode*. To keep your changes, choose **File -> Save a copy in Drive**.
 4. Leave the runtime on the default CPU. **Runtime -> Change runtime type** should show *CPU*; a GPU is not needed and only burns your free quota.
-5. Run the first code cell. It installs two packages and downloads the embedding model. This takes about a minute, so do it as soon as you open the notebook.
+5. Run the first code cell. It installs the packages; the model downloads when the first model cell runs. This takes about a minute, so do it as soon as you open the notebook. The notebook has no outputs until you run it.
 
 ## Using a notebook
 
@@ -19,7 +19,7 @@ You need a Google account and a browser. Nothing is installed on your computer.
 
 ## Where the data comes from
 
-The chapters read their data straight from the public course repository on GitHub, so there is nothing to upload or mount:
+The exercises read their data straight from the public course repository on GitHub, so there is nothing to upload or mount:
 
 ```
 https://raw.githubusercontent.com/dwulff/LLM4BeSci_2025MetaRep/main/day_2/
@@ -33,7 +33,7 @@ If you prefer your own machine, you need Python 3.10 or newer and:
 pip install sentence-transformers pacmap pandas scikit-learn seaborn matplotlib jupyter
 ```
 
-Then download the chapter notebooks from the repository and open them with `jupyter notebook`. The first run downloads the embedding model (about 90 MB) into your Hugging Face cache.
+Then download the notebooks in `exercises/` from the repository and open them with `jupyter notebook`. The first run downloads the embedding model (about 90 MB) into your Hugging Face cache.
 
 ## If something goes wrong
 

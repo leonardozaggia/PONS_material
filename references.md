@@ -10,7 +10,7 @@
 
 ## Tools
 
-- [sentence-transformers](https://www.sbert.net/): the Python library used in every chapter.
+- [sentence-transformers](https://www.sbert.net/): the Python library used in every exercise.
 - [MTEB leaderboard](https://huggingface.co/spaces/mteb/leaderboard): compare embedding models across tasks.
 - [embedR](https://github.com/dwulff/embedR): the same workflow from R.
 - [LLM4BeSci course repository](https://github.com/dwulff/LLM4BeSci_2025MetaRep): the full three-day course this tutorial was cut from. It adds text generation, zero-shot classification, LoRA fine-tuning and information extraction.

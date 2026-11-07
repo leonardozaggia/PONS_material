@@ -14,21 +14,21 @@ Material for a 90-minute hands-on seminar on using language-model embeddings in 
 
 Each chapter starts with a short theory section and ends with an exercise you run yourself.
 
-| Chapter | Topic | What you do |
+| Part | Theory page | Exercise notebook |
 |---|---|---|
-| 1. From words to vectors | Why a word is defined by its context, and how a model turns text into numbers | Guess which sentences are similar, then check; shuffle word order; test negation |
-| 2. Sentence embeddings and personality items | How a transformer builds a sentence embedding | Embed 300 personality items, test their similarity against real correlations with a permutation test, map them, write your own item, switch to a fine-tuned model |
-| 3. Embeddings as features | Using embeddings as input to a classical model | Train a classifier on tweets, compete against it, and evaluate it with permutation and bootstrap |
+| 1. From words to vectors | Why a word is defined by its context, and how a model turns text into numbers | Three sentences become vectors; similarity heatmaps; what the model ignores |
+| 2. Items as text (the core) | How a transformer builds a sentence embedding, and why items are text | The full pipeline on 300 personality items: embed, compare with observed correlations, permutation test, map, recover constructs, your own item, a fine-tuned model |
+| 3. Beyond similarity (take-home) | Embeddings as features for prediction | A tweet classifier with permutation test, bootstrap and learning curve |
 
-To run an exercise, open the chapter in the tutorial, click the rocket icon at the top of the page and choose **Colab**. Run the cells from top to bottom. The first cell installs what is needed and takes about a minute. The [Setup](https://leonardozaggia.github.io/PONS_material/setup.html) page walks through this step by step and lists common problems.
+To run an exercise, open its notebook page in the tutorial, click the rocket icon at the top of the page and choose **Colab**. The notebook has no outputs yet; they appear as you run the cells from top to bottom. The first cell installs what is needed and takes about a minute. The [Setup](https://leonardozaggia.github.io/PONS_material/setup.html) page walks through this step by step and lists common problems.
 
 If you prefer to open the notebooks directly:
 
-- [Chapter 1](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/01_vectors.ipynb)
-- [Chapter 2](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/02_personality.ipynb)
-- [Chapter 3](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/03_features.ipynb)
+- [Exercise 1: from sentences to vectors](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/exercises/01_warmup.ipynb)
+- [Exercise 2: items as text](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/exercises/02_items.ipynb)
+- [Exercise 3: embeddings as features](https://colab.research.google.com/github/leonardozaggia/PONS_material/blob/main/exercises/03_features.ipynb)
 
-The figures in the theory sections only show in the tutorial, not in the Colab copy.
+The `solutions/` folder holds the same notebooks with their outputs, for checking your results afterwards.
 
 ## After the seminar
 
@@ -45,11 +45,11 @@ CC BY-SA 4.0. The exercises and figures are adapted from the [LLM4BeSci course](
 
 This repository is a [Jupyter Book](https://jupyterbook.org) (1.x). Pushing to `main` runs `.github/workflows/book.yml`, which builds the book and publishes it to GitHub Pages. Pages must be set to the **GitHub Actions** source in the repository settings.
 
-The chapter notebooks are committed with their outputs and are not re-executed at build time (`execute_notebooks: "off"`), so the build needs neither torch nor a model download. If you change a code cell, rerun the notebook before committing:
+The theory lives in `01_vectors.md`, `02_personality.md` and `03_features.md`. The exercise notebooks in `exercises/` are committed **without outputs** and are not executed at build time (`execute_notebooks: "off"`), so the book build needs neither torch nor a model download. The executed copies in `solutions/` are not part of the book; regenerate them after changing an exercise:
 
 ```bash
 pip install sentence-transformers pacmap
-jupyter nbconvert --to notebook --execute --inplace 0*.ipynb
+cp exercises/*.ipynb solutions/ && jupyter nbconvert --to notebook --execute --inplace solutions/*.ipynb
 ```
 
 To build locally:

@@ -1,39 +1,40 @@
 # LLM Embeddings in Psychology
 
-A 90-minute hands-on tutorial on using open-source language models as **measurement instruments for text**. You will turn sentences into vectors, test whether a model's notion of similarity matches what human participants do on a personality questionnaire, and use embeddings as features in an ordinary statistical model.
+Psychological and neurodevelopmental tests are made of language: every item is a piece of text carrying assumptions about what it measures. Sentence-embedding models make that text computationally tractable by mapping items into a vector space where geometric proximity corresponds to semantic similarity. This opens a sample-independent window on old psychometric questions: Which items belong together? Do test constructs match their semantic structure? Where do two editions of a test diverge?
 
-No GPU, no account and no API key are needed. Every exercise runs on the free Google Colab CPU runtime in a few minutes.
+In this 90-minute hands-on seminar you build the complete pipeline in Python with open-source tools and openly accessible items. Starting from raw item text, you extract embeddings, compute pairwise similarities, compare them with the observed correlations between participants' responses, map the item space in two dimensions, and attempt to recover the test's construct structure without any response data, discussing where and why this fails.
+
+No prior experience with language models is required. Basic familiarity with Python helps but is not needed: every cell is explained, and the tasks ask you to change a value or a line of text. Everything runs on the free Google Colab CPU runtime, so there is nothing to install.
 
 ## How this book works
 
-Each chapter has two halves. The first half is **theory**: what the method is, why it works, and what the key figure looks like. The second half is an **exercise** that you run yourself: numbered tasks that ask you to change a line and look at what happens, with a plot or a permutation test behind most of them. Read the theory here, then press the rocket button at the top of the chapter and choose *Colab* to open the exercise in a runnable copy. Sections marked *Optional* are for after the session.
+Each part has a **theory page** and an **exercise notebook**. The theory page is read here. The notebook opens in Colab from the rocket button at the top of its page. It has no outputs yet: they appear as you run the cells. The main blocks are run together, with the group; the **TASK** cells are yours to explore at your own pace, and the bonus tasks are for afterwards.
 
 ```{admonition} Before the session
 :class: tip
-Read the [Setup](setup) page and open Chapter 1 in Colab once, so the package install and model download happen before we start.
+Read the [Setup](setup) page and open Exercise 1 in Colab once, so that the package install and the model download happen before we start.
 ```
 
-## Schedule
+## Programme
 
 | Time | Block | Where |
 |---|---|---|
-| 0:00 | Why embeddings: the two things a language model can give you | Slides |
-| 0:05 | [Chapter 1](01_vectors): from words to vectors | Theory, then exercise: guess first, a similarity heatmap, word shuffling, negation |
-| 0:30 | [Chapter 2](02_personality): sentence embeddings and personality items | Theory, then exercise: nearest items, a permutation test, keying, a map, your own item, the fine-tuned model |
-| 1:10 | [Chapter 3](03_features): embeddings as features for prediction | Theory, then exercise: a classifier, you versus the model, permutation and bootstrap |
-| 1:25 | Applications in the field, where to go next | Slides and [References](references) |
+| 0:00 | Why items are text, and what an embedding gives you | Slides |
+| 0:10 | [Part 1](01_vectors): from words to vectors | Theory page, then [Exercise 1](exercises/01_warmup) |
+| 0:35 | [Part 2](02_personality): the item pipeline | Theory page, then [Exercise 2](exercises/02_items) |
+| 1:20 | A real application: decomposing the cognition scale of the Bayley-III | Slides |
+| 1:30 | Where to go next | [References](references) |
+
+[Part 3](03_features), embeddings as features for prediction, is take-home material: the same vectors become predictors in an ordinary statistical model.
 
 ## What you will be able to do afterwards
 
 - Explain what an embedding is and why cosine similarity is the right comparison.
-- Embed any list of texts with three lines of Python and compute a similarity matrix.
-- Compare model-predicted similarity against empirical correlations, map items in two dimensions, and classify items by construct.
-- Train a classical classifier on embeddings and evaluate it without leaking information from the test set.
-- Choose an embedding model from a public leaderboard and know when domain fine-tuning pays off.
-
-## Prerequisites
-
-Basic familiarity with questionnaires and correlation. No Python experience is required: every cell is explained, and the tasks ask you to change a value or a string, not to write code from scratch.
+- Extract embeddings for a set of items with three lines of Python and compute all pairwise similarities.
+- Compare model-predicted similarity against empirical item correlations, and test whether the agreement beats chance.
+- Map items in two dimensions and read the map critically.
+- Assign items to constructs from text alone, and say where and why that fails.
+- Judge when a model fine-tuned on items is worth the effort, and what a fair evaluation of it needs.
 
 ## Credits
 

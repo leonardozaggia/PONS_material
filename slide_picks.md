@@ -4,20 +4,18 @@ The course decks are PDF exports, so "picking" a slide means extracting that pag
 
 ## Run of show
 
-The book's chapters carry the same figures in their theory sections, so you can present from the book directly or from your own slides built from the picks below.
+The theory pages carry the same figures as the picks below, so you can present from the book or from your own slides. The exercise notebooks have no outputs: run the main blocks together on the projector while participants run them on their own Colab, then give them the TASK cells.
 
 | Time | Block | Source | Participant does |
 |---|---|---|---|
-| 0:00 - 0:05 | Why embeddings, two uses of an LLM | `day_1/day_1a.pdf` p30, p33, p37 | Opens Chapter 1 in Colab, runs the Setup cell |
-| 0:05 - 0:15 | What an embedding is | Chapter 1 theory, or `day_2/day_2_embeddings.pdf` picks below | Listens |
-| 0:15 - 0:30 | Warm-up: sentences to vectors | Chapter 1 exercise | Guesses the ranking first, runs the cells, Tasks 1 and 4, the word-shuffle cell, Task 5 (negation) |
-| 0:30 - 0:40 | How a transformer produces a sentence embedding | Chapter 2 theory, or `day_2/day_2_embeddings.pdf` p28, p29, p31, p40, p45, p46 | Listens |
-| 0:40 - 1:10 | Personality items | Chapter 2 exercise | Runs 2.1 to 2.6: anchor item, permutation test, keying pairs, map, own item (Task 4), then Task 5 rerun with the fine-tuned model |
-| 1:10 - 1:15 | Three ways to use an LLM for prediction | Chapter 3 theory, or `day_2/day_2_classification.pdf` p4, p5, p29 | Listens |
-| 1:15 - 1:25 | Embeddings as features | Chapter 3 exercise | Runs 3.1 to 3.4: fit, you versus the model, permutation and bootstrap |
-| 1:25 - 1:30 | Applications in the field, wrap-up | Chapter 3 outlook, or `day_3/day_3b.pdf` picks below | Questions |
+| 0:00 - 0:10 | Items are text; the two things a language model can give you | Your slides; `day_1/day_1a.pdf` p30, p33 | Opens Exercise 1 in Colab, runs the setup cell |
+| 0:10 - 0:20 | What an embedding is | Part 1 theory page, or `day_2/day_2_embeddings.pdf` picks below | Listens |
+| 0:20 - 0:35 | Exercise 1: sentences to vectors | `exercises/01_warmup.ipynb` | Runs the three blocks together; Tasks 2 to 5 alone |
+| 0:35 - 0:45 | How a transformer produces a sentence embedding; why items are text | Part 2 theory page, or `day_2/day_2_embeddings.pdf` p28, p29, p40, p45, p46 | Listens; opens Exercise 2, runs the setup cell |
+| 0:45 - 1:20 | Exercise 2: the item pipeline | `exercises/02_items.ipynb` | Sections 1 to 6 together with Tasks 1, 3 and 4 in between; section 7 alone (Tasks 5 and 6); section 8 together, Task 7 as discussion |
+| 1:20 - 1:30 | Decomposing the Bayley-III cognition scale | Your own slides and plots, from your machine | Listens, questions |
 
-If you run short, drop Chapter 3's permutation cell and the you-versus-the-model round and just show the confusion matrix. If you run long, Chapter 1 Task 4 and Chapter 2 Tasks 2 and 3 are the safest things to skip. Everything marked Optional in the notebooks is take-home material by design.
+If you run short, skip Task 2 (the permutation test) and Task 4 in Exercise 2. If you run long, section 7 of Exercise 2 is the safest thing to cut. Exercise 3 is take-home by design.
 
 ## Picks from `day_1/day_1a.pdf` (Intro to LLMs, 37 pages)
 
