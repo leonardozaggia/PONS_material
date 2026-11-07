@@ -43,3 +43,13 @@ Then download the notebooks in `exercises/` from the repository and open them wi
 | Model download hangs | Colab's network hiccup. **Runtime -> Restart session**, run the setup cell again. |
 | A plot does not show | Run the cell again; the first call sometimes only configures the plotting backend. |
 | Everything is slow | Check that no GPU runtime was selected and that nobody else is running a large notebook on the same account. |
+
+## Useful material
+
+**Python basics.** If `import`, variables, lists and function calls are new to you, the Python introduction of the psy111 book covers them in an afternoon. The chapters that matter here are [Setup and usage](https://leonardozaggia.github.io/psy111/book/introduction/setup/introduction), [Data structures](https://leonardozaggia.github.io/psy111/book/introduction/data-structures/introduction), [Objects, functions and imports](https://leonardozaggia.github.io/psy111/book/introduction/objects/introduction) and [Scientific computing with numpy, pandas and matplotlib](https://leonardozaggia.github.io/psy111/book/introduction/scientific-comp/introduction).
+
+**Embeddings on a whole literature.** The same pipeline as Exercise 2 applies to paper abstracts: search, embed, map and cluster. [Review Buddy](https://github.com/leonardozaggia/review_buddy) searches Scopus, PubMed, arXiv and other databases with one query, screens abstracts with a local language model and retrieves the PDFs. The companion book [Automated systematic literature search](https://leonardozaggia.github.io/automated_systematic_literature_search/) walks through it.
+
+**Psychometrics in Python.** The [psy126 book](https://leonardozaggia.github.io/psy126/) is a tutorial on item response theory, the classical counterpart of what this seminar does with text.
+
+**Tools and models** used in the exercises are listed on the [References](references) page.

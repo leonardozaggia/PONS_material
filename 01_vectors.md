@@ -38,7 +38,13 @@ After training, the hidden layer is the embedding. Nobody told the network that 
 
 ![Embeddings are the hidden activations recorded for an input](images/hidden_activations.png)
 
-This is the general recipe, and it is the same for the transformer models you will use in the next chapter. Train a network on some language task, then throw the output layer away and keep the activations just before it. Feed in an input, record the activations, and you have its vector.
+This is the general recipe: train a network on some language task, then keep the activations of a hidden layer as the representation. How the network was trained decides how good those activations are as a measure of meaning, and there are three cases.
+
+- **A by-product of another task.** word2vec predicts context words; a generative model predicts the next token. Their hidden activations carry meaning because the task cannot be solved otherwise, but nothing in the training asked the vectors to be comparable.
+- **Encoder-only models.** BERT-style transformers have no output head for generating text. They are pretrained to fill in masked words, and every token gets a contextual vector that was never meant to produce output. Their hidden states are a better basis, but averaging them into one sentence vector still works only moderately.
+- **Embedding models.** The models used in this book, such as `all-MiniLM-L6-v2`, are encoder-only transformers trained *for embeddings*: on hundreds of millions of sentence pairs, with a contrastive objective that pulls paraphrases together and pushes unrelated sentences apart. The vector is the output, and cosine similarity between vectors is what the training optimised.
+
+The next chapter opens the encoder; the exercises use the third kind throughout.
 
 ![Recording the hidden activations for several inputs gives an embedding table](images/embedding_table.png)
 
